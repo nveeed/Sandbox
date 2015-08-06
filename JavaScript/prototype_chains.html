@@ -1,12 +1,12 @@
 <html>
 <head>
     <title>JavaScript Sandbox</title>
-    <link rel="stylesheet" href="bootstrap.css"/>
-    <script type="text/javascript" src='bootstrap+jquery.js'></script>
+    <link rel="stylesheet" href="../_libraries/bootstrap.css"/>
+    <script type="text/javascript" src='../_libraries/bootstrap+jquery.js'></script>
     <script type="text/javascript">
         $(function () {
 
-            function log(obj){ return console.log(obj) }
+            function log(obj){ console.log(obj) }
 
             var parent = {
                 a: "a val",
@@ -21,7 +21,10 @@
 
             // 1. You have access to all the 'parent' properties:
             child.c();
-            log(child.a);
+            child.a = "new a val";
+            log("child: "); log(child);
+            log("child.a:"); log(child.a);
+            log("parent.a:"); log(parent.a);
 
             // 2. It has the same behavior, even if parent is modified on the go:
             parent.d = "d value";
