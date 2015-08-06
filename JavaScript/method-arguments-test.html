@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>jQuery SandBox</title>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/custom.css">
+    <script type="text/javascript" src='assets/jquery.js'></script>
+    <script type="text/javascript" src='assets/bootstrap.min.js'></script>
+    <script type="text/javascript">
+        
+        $(function(){
+            var fn = function (a,b) {
+                a = a + 2;
+                b = b * 2;
+                console.log("Inside: a: "+a+" , b: "+b);
+            };
+
+            var fn2 = function (obj) {
+                obj.prop = "new value";
+                console.log("Inside:");
+                console.log(obj);
+            };
+
+            var var1 = 3;
+            var var2 = 4;
+            fn(var1,var2); // passed by value
+            console.log("Outside: var1: "+var1+" , var2: "+var2);
+
+            var obj1 = { prop: "value" };
+            fn2(obj1); // passed by reference
+            console.log("Outside:");
+            console.log(obj1);
+
+
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="output"></div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>jQuery SandBox</title>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/custom.css">
+    <script type="text/javascript" src='assets/jquery.js'></script>
+    <script type="text/javascript" src='assets/bootstrap.min.js'></script>
+    <script type="text/javascript">
+
+    $(function(){
+
+        $("#my-form").submit(function () {
+            var data = $(this).serialize();
+            var resultDiv = $("#results");
+
+            resultDiv.html("<h4>Sending following Data to the Server via Ajax</h4>");
+            resultDiv.append("<p>form.serialize(): "+data+"</p>");
+
+            resultDiv.append("<h4>Type of data returned by form.serialize():</h4>");
+            resultDiv.append("<p>"+typeof data+"</p>");
+
+            resultDiv.append("<h4>Please note that:</h4>");
+            resultDiv.append("<p>form.serialize() ignores the inputs having a type of submit.</p>");
+            resultDiv.append("<p>Consider this fact if your ajax handler at the server includes some code like this:</p>");
+            resultDiv.append("<pre>" + "if(isset($_POST['submit'])){ ... }" + "</pre>");
+            resultDiv.append("<p>It won't be executed!</p>");
+
+            $.post("http://localhost/jQuery-SandBox/serializeHandler.php", data , function (response) {
+
+                resultDiv.append("<h4>Here is the response from the server:</h4>");
+                resultDiv.append("<p><pre>print_r($_POST):</pre></p>");
+                resultDiv.append("<p>"+response+"</p>");
+
+            });
+
+            return false;
+        });
+	});
+
+
+    </script>
+</head>
+
+<body>
+
+<form id="my-form">
+    <input type="text" name="ip1" value="some value"/>
+    <input type="text" name="ip2" value="whatever"/>
+    <input type="submit" name="submitForm"/>
+</form>
+
+<div id="results">
+    <p>Submit the form and see the results</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>jQuery SandBox</title>
+    <link rel="stylesheet" type="text/css" href="../assets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/custom.css">
+    <script type="text/javascript" src='../assets/jquery.js'></script>
+    <script type="text/javascript" src='../assets/bootstrap.min.js'></script>
+    <script type="text/javascript">
+
+    $(function(){
+        $("#my-form").submit(function () {
+            console.log("form submitted.");
+            $.post("autoRunningScript.php",[], function (response) {
+                $("body").append(response);
+                console.log("response received.");
+                return true;
+            });
+        });
+        return false;
+    });
+
+
+    </script>
+</head>
+
+<body>
+
+<form id="my-form">
+    <input type="text" name="ip1" value="some value"/>
+    <input type="text" name="ip2" value="whatever"/>
+    <input type="submit" name="submitForm"/>
+</form>
+
+<div id="results">
+    <p>Submit the form and see the results</p>
+</div>
+
+<div class="progress">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+        <span class="sr-only">45% Complete</span>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>jQuery SandBox</title>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/custom.css">
+    <script type="text/javascript" src='assets/jquery.js'></script>
+    <script type="text/javascript" src='assets/bootstrap.min.js'></script>
+    <script type="text/javascript">
+
+    $(function(){
+
+		$('.target').toggle(function() {
+			console.log('Toggle event was triggered (handler 1).');
+		}, function() {
+			console.log('Toggle event was triggered (handler 2).');
+		});
+
+	});
+
+
+    </script>
+</head>
+
+<body>
+    <div class="target btn btn-primary">Click Here and Then Check Console</div>
+</body>
+</html>

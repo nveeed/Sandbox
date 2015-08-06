@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>jQuery SandBox</title>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/custom.css">
+    <script type="text/javascript" src='assets/jquery.js'></script>
+    <script type="text/javascript" src='assets/bootstrap.min.js'></script>
+    <script type="text/javascript">
+    var global = "default";
+
+    console.log("1");
+    console.log(global);
+
+    $(function(){
+
+        console.log("2");
+        console.log(global);
+
+        $("#my-form").submit(function () {
+
+            global = "New";
+
+            console.log("3");
+            console.log(global);
+
+            return false;
+        });
+
+	});
+
+    console.log("4");
+    console.log(global);
+
+
+    </script>
+</head>
+
+<body>
+
+<form id="my-form">
+    <input type="text" name="ip1" value="some value"/>
+    <input type="text" name="ip2" value="whatever"/>
+    <input type="submit" name="submitForm"/>
+</form>
+
+<div id="results">
+    <p>Submit the form and see the results</p>
+</div>
+
+</body>
+</html>

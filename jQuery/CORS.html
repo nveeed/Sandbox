@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>jQuery SandBox</title>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/custom.css">
+    <script type="text/javascript" src='assets/jquery.js'></script>
+    <script type="text/javascript" src='assets/bootstrap.min.js'></script>
+    <script type="text/javascript">
+        $(function(){
+            var url = 'http://localhost/jQuery-SandBox/CORS.php';
+            $.post( url , { data : 'naveed' } , function (response) { $("#response").html(response); } );
+        });
+    </script>
+    <style>
+        #response{
+            border: 2px solid lightslategray;
+            border-radius: 1em;
+            padding: 2em 1em;
+            text-align: center;
+            width: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cross-Origin-Resource-Sharing</h1>
+    <p>You sent the data (a string: 'naveed') to: 'http://localhost/jQuery-SandBox/CORS.php'</p>
+    <p>If the following box is filled with some response, there may be one of the following happening:</p>
+    <ul>
+        <li>You are on the same domain. i.e. http://localhost</li>
+        <li>OR Cross-Origin-Resource-Sharing is enabled on http://localhost</li>
+        <li>OR 'Access-Control-Allow-Origin' header is sent in 'http://localhost/jQuery-SandBox/CORS.php'</li>
+    </ul>
+    <p>If there is no response, you have to came across one of the above cases. or visit <a href="https://jvaneyck.wordpress.com/2014/01/07/cross-domain-requests-in-javascript/" target="_blank">this link</a>.</p>
+
+    <div id="response">
+        <p>:( No response from the server.</p>
+        <p>You can visit console for error statement.</p>
+    </div>
+</body>
+</html>
