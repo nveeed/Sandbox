@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Mirrored from www.yiiframework.com/doc-2.0/guide-security-auth-clients.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 May 2015 18:11:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="assets/c268c820/css/bootstrap.css" rel="stylesheet">
+<link href="assets/420f52a4/style.css" rel="stylesheet">
+<script src="assets/4d3f04b3/jquery.js"></script>
+<script src="assets/c268c820/js/bootstrap.js"></script>
+<script src="assets/7ba40f0b/jssearch.js"></script>    <title>The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1137" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1137-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="index-2.html">The Definitive Guide to Yii 2.0</a></div><div id="w1137-collapse" class="collapse navbar-collapse"><ul id="w1138" class="navbar-nav nav"><li><a href="index-2.html">Class reference</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Extensions <b class="caret"></b></a><ul id="w1139" class="dropdown-menu"><li><a href="ext-apidoc-index.html" tabindex="-1">apidoc</a></li>
+<li><a href="ext-authclient-index.html" tabindex="-1">authclient</a></li>
+<li><a href="ext-bootstrap-index.html" tabindex="-1">bootstrap</a></li>
+<li><a href="ext-codeception-index.html" tabindex="-1">codeception</a></li>
+<li><a href="ext-composer-index.html" tabindex="-1">composer</a></li>
+<li><a href="ext-debug-index.html" tabindex="-1">debug</a></li>
+<li><a href="ext-elasticsearch-index.html" tabindex="-1">elasticsearch</a></li>
+<li><a href="ext-faker-index.html" tabindex="-1">faker</a></li>
+<li><a href="ext-gii-index.html" tabindex="-1">gii</a></li>
+<li><a href="ext-imagine-index.html" tabindex="-1">imagine</a></li>
+<li><a href="ext-jui-index.html" tabindex="-1">jui</a></li>
+<li><a href="ext-mongodb-index.html" tabindex="-1">mongodb</a></li>
+<li><a href="ext-redis-index.html" tabindex="-1">redis</a></li>
+<li><a href="ext-smarty-index.html" tabindex="-1">smarty</a></li>
+<li><a href="ext-sphinx-index.html" tabindex="-1">sphinx</a></li>
+<li><a href="ext-swiftmailer-index.html" tabindex="-1">swiftmailer</a></li>
+<li><a href="ext-twig-index.html" tabindex="-1">twig</a></li></ul></li>
+<li><a href="guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1121" data-toggle="collapse" data-parent="#navigation">Introduction <b class="caret"></b></a><div id="navigation-1121" class="submenu panel-collapse collapse"><a class="list-group-item" href="guide-intro-yii.html">About Yii</a>
+<a class="list-group-item" href="guide-intro-upgrade-from-v1.html">Upgrading from Version 1.1</a></div>
+<a class="list-group-item" href="#navigation-1122" data-toggle="collapse" data-parent="#navigation">Getting Started <b class="caret"></b></a><div id="navigation-1122" class="submenu panel-collapse collapse"><a class="list-group-item" href="guide-start-installation.html">Installing Yii</a>
+<a class="list-group-item" href="guide-start-workflow.html">Running Applications</a>
+<a class="list-group-item" href="guide-start-hello.html">Saying Hello</a>
+<a class="list-group-item" href="guide-start-forms.html">Working with Forms</a>
+<a class="list-group-item" href="guide-start-databases.html">Working with Databases</a>
+<a class="list-group-item" href="guide-start-gii.html">Generating Code with Gii</a>
+<a class="list-group-item" href="guide-start-looking-ahead.html">Looking Ahead</a></div>
+<a class="list-group-item" href="#navigation-1123" data-toggle="collapse" data-parent="#navigation">Application Structure <b class="caret"></b></a><div id="navigation-1123" class="submenu panel-collapse collapse"><a class="list-group-item" href="guide-structure-overview.html">Overview</a>
+<a class="list-group-item" href="guide-structure-entry-scripts.html">Entry Scripts</a>
+<a class="list-group-item" href="guide-structure-applications.html">Applications</a>
+<a class="list-group-item" href="guide-structure-application-components.html">Application Components</a>
+<a class="list-group-item" href="guide-structure-controllers.html">Controllers</a>
+<a class="list-group-item" href="guide-structure-models.html">Models</a>
+<a class="list-group-item" href="guide-structure-views.html">Views</a>
+<a class="list-group-item" href="guide-structure-modules.html">Modules</a>
+<a class="list-group-item" href="guide-structure-filters.html">Filters</a>
+<a class="list-group-item" href="guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="guide-structure-extensions.html">Extensions</a></div>
+<a class="list-group-item" href="#navigation-1124" data-toggle="collapse" data-parent="#navigation">Handling Requests <b class="caret"></b></a><div id="navigation-1124" class="submenu panel-collapse collapse"><a class="list-group-item" href="guide-runtime-overview.html">Overview</a>
+<a class="list-group-item" href="guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="guide-runtime-routing.html">Routing and URL Creation</a>
+<a class="list-group-item" href="guide-runtime-requests.html">Requests</a>
+<a class="list-group-item" href="guide-runtime-responses.html">Responses</a>
+<a class="list-group-item" href="guide-runtime-sessions-cookies.html">Sessions and Cookies</a>
+<a class="list-group-item" href="guide-runtime-handling-errors.html">Handling Errors</a>
+<a class="list-group-item" href="guide-runtime-logging.html">Logging</a></div>
+<a class="list-group-item" href="#navigation-1125" data-toggle="collapse" data-parent="#navigation">Key Concepts <b class="caret"></b></a><div id="navigation-1125" class="submenu panel-collapse collapse"><a class="list-group-item" href="guide-concept-components.html">Components</a>
+<a class="list-group-item" href="guide-concept-properties.html">Properties</a>
+<a class="list-group-item" href="guide-concept-events.html">Events</a>
+<a class="list-group-item" href="guide-concept-behaviors.html">Behaviors</a>
+<a class="list-group-item" href="guide-concept-configurations.html">Configurations</a>
+<a class="list-group-item" href="guide-concept-aliases.html">Aliases</a>
+<a class="list-group-item" href="guide-concept-autoloading.html">Class Autoloading</a>
+<a class="list-group-item" href="guide-concept-service-locator.html">Service Locator</a>
+<a class="list-group-item" href="guide-concept-di-container.html">Dependency Injection Container</a></div>
+<a class="list-group-item" href="#navigation-1126" data-toggle="collapse" data-parent="#navigation">Working with Databases <b class="caret"></b></a><div id="navigation-1126" class="submenu panel-collapse collapse"><a class="list-group-item" href="guide-db-dao.html">Data Access Objects</a>
+<a class="list-group-item" href="guide-db-query-builder.html">Query Builder</a>
+<a class="list-group-item" href="guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="guide-db-migrations.html">Migrations</a>
+<a class="list-group-item" href="guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="guide-db-elasticsearch.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1127" data-toggle="collapse" data-parent="#navigation">Getting Data from Users <b class="caret"></b></a><div id="navigation-1127" class="submenu panel-collapse collapse"><a class="list-group-item" href="guide-input-forms.html">Creating Forms</a>
+<a class="list-group-item" href="guide-input-validation.html">Validating Input</a>
+<a class="list-group-item" href="guide-input-file-upload.html">Uploading Files</a>
+<a class="list-group-item" href="guide-input-tabular-input.html">Collecting tabular input</a>
+<a class="list-group-item" href="guide-input-multiple-models.html">Getting Data for Multiple Models</a></div>
+<a class="list-group-item" href="#navigation-1128" data-toggle="collapse" data-parent="#navigation">Displaying Data <b class="caret"></b></a><div id="navigation-1128" class="submenu panel-collapse collapse"><a class="list-group-item" href="guide-output-formatter.html">Data Formatting</a>
+<a class="list-group-item" href="guide-output-pagination.html">Pagination</a>
+<a class="list-group-item" href="guide-output-sorting.html">Sorting</a>
+<a class="list-group-item" href="guide-output-data-providers.html">Data Providers</a>
+<a class="list-group-item" href="guide-output-data-widgets.html">Data Widgets</a>
+<a class="list-group-item" href="guide-output-client-scripts.html">Working with Client Scripts</a>
+<a class="list-group-item" href="guide-output-theming.html">Theming</a></div>
+<a class="list-group-item active" href="#navigation-1129" data-toggle="collapse" data-parent="#navigation">Security <b class="caret"></b></a><div id="navigation-1129" class="submenu panel-collapse collapse in"><a class="list-group-item" href="guide-security-authentication.html">Authentication</a>
+<a class="list-group-item" href="guide-security-authorization.html">Authorization</a>
+<a class="list-group-item" href="guide-security-passwords.html">Working with Passwords</a>
+<a class="list-group-item active" href="guide-security-auth-clients.html">Auth Clients</a>
+<a class="list-group-item" href="guide-security-best-practices.html">Best Practices</a></div>
+<a class="list-group-item" href="#navigation-1130" data-toggle="collapse" data-parent="#navigation">Caching <b class="caret"></b></a><div id="navigation-1130" class="submenu panel-collapse collapse"><a class="list-group-item" href="guide-caching-overview.html">Overview</a>
+<a class="list-group-item" href="guide-caching-data.html">Data Caching</a>
+<a class="list-group-item" href="guide-caching-fragment.html">Fragment Caching</a>
+<a class="list-group-item" href="guide-caching-page.html">Page Caching</a>
+<a class="list-group-item" href="guide-caching-http.html">HTTP Caching</a></div>
+<a class="list-group-item" href="#navigation-1131" data-toggle="collapse" data-parent="#navigation">RESTful Web Services <b class="caret"></b></a><div id="navigation-1131" class="submenu panel-collapse collapse"><a class="list-group-item" href="guide-rest-quick-start.html">Quick Start</a>
+<a class="list-group-item" href="guide-rest-resources.html">Resources</a>
+<a class="list-group-item" href="guide-rest-controllers.html">Controllers</a>
+<a class="list-group-item" href="guide-rest-routing.html">Routing</a>
+<a class="list-group-item" href="guide-rest-response-formatting.html">Response Formatting</a>
+<a class="list-group-item" href="guide-rest-authentication.html">Authentication</a>
+<a class="list-group-item" href="guide-rest-rate-limiting.html">Rate Limiting</a>
+<a class="list-group-item" href="guide-rest-versioning.html">Versioning</a>
+<a class="list-group-item" href="guide-rest-error-handling.html">Error Handling</a></div>
+<a class="list-group-item" href="#navigation-1132" data-toggle="collapse" data-parent="#navigation">Development Tools <b class="caret"></b></a><div id="navigation-1132" class="submenu panel-collapse collapse"><a class="list-group-item" href="guide-tool-debugger.html">Debug Toolbar and Debugger</a>
+<a class="list-group-item" href="guide-tool-gii.html">Generating Code using Gii</a>
+<a class="list-group-item" href="guide-tool-api-doc.html">Generating API Documentation</a></div>
+<a class="list-group-item" href="#navigation-1133" data-toggle="collapse" data-parent="#navigation">Testing <b class="caret"></b></a><div id="navigation-1133" class="submenu panel-collapse collapse"><a class="list-group-item" href="guide-test-overview.html">Overview</a>
+<a class="list-group-item" href="guide-test-environment-setup.html">Testing environment setup</a>
+<a class="list-group-item" href="guide-test-unit.html">Unit Tests</a>
+<a class="list-group-item" href="guide-test-functional.html">Functional Tests</a>
+<a class="list-group-item" href="guide-test-acceptance.html">Acceptance Tests</a>
+<a class="list-group-item" href="guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-1134" data-toggle="collapse" data-parent="#navigation">Special Topics <b class="caret"></b></a><div id="navigation-1134" class="submenu panel-collapse collapse"><a class="list-group-item" href="guide-tutorial-advanced-app.html">Advanced Application Template</a>
+<a class="list-group-item" href="guide-tutorial-start-from-scratch.html">Building Application from Scratch</a>
+<a class="list-group-item" href="guide-tutorial-console.html">Console Commands</a>
+<a class="list-group-item" href="guide-tutorial-core-validators.html">Core Validators</a>
+<a class="list-group-item" href="guide-tutorial-i18n.html">Internationalization</a>
+<a class="list-group-item" href="guide-tutorial-mailing.html">Mailing</a>
+<a class="list-group-item" href="guide-tutorial-performance-tuning.html">Performance Tuning</a>
+<a class="list-group-item" href="guide-tutorial-shared-hosting.html">Shared Hosting Environment</a>
+<a class="list-group-item" href="guide-tutorial-template-engines.html">Template Engines</a>
+<a class="list-group-item" href="guide-tutorial-yii-integration.html">Working with Third-Party Code</a></div>
+<a class="list-group-item" href="#navigation-1135" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-1135" class="submenu panel-collapse collapse"><a class="list-group-item" href="guide-widget-bootstrap.html">Bootstrap Widgets</a>
+<a class="list-group-item" href="guide-widget-jui.html">jQuery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1136" data-toggle="collapse" data-parent="#navigation">Helpers <b class="caret"></b></a><div id="navigation-1136" class="submenu panel-collapse collapse"><a class="list-group-item" href="guide-helper-overview.html">Overview</a>
+<a class="list-group-item" href="guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="guide-helper-html.html">Html</a>
+<a class="list-group-item" href="guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <div class="fixlink"><a href="https://github.com/yiisoft/yii2/edit/master/docs/guide/security-auth-clients.md" class="h1" title="Found an error? Please help us fix it. Thanks!"><span class="glyphicon glyphicon-pencil"></a></div>
+        <h1>Auth Clients <a href="#auth-clients" id="auth-clients" class="hashlink">&para;</a></h1><p>Yii provides official extension that lets you authenticate and/or authorize using external services via consuming
+<a href="http://openid.net/">OpenID</a>, <a href="http://oauth.net/">OAuth</a> or <a href="http://oauth.net/2/">OAuth2</a>.</p>
+<h2>Installing extension <a href="#installing-extension" id="installing-extension" class="hashlink">&para;</a></h2><p>In order to install extension use Composer. Either run</p>
+<pre><code>composer require --prefer-dist yiisoft/yii2-authclient "*"
+</code></pre>
+<p>or add</p>
+<pre><code class="language-json">"yiisoft/yii2-authclient": "*"
+</code></pre>
+<p>to the <code>require</code> section of your composer.json.</p>
+<h2>Configuring clients <a href="#configuring-clients" id="configuring-clients" class="hashlink">&para;</a></h2><p>After extension is installed you need to setup auth client collection application component:</p>
+<pre><code class="language-php"><span style="color: #0000BB"></span><span style="color: #DD0000">'components'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'authClientCollection'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'class'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'yii\authclient\Collection'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'clients'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'google'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'class'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'yii\authclient\clients\GoogleOpenId'<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'facebook'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'class'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'yii\authclient\clients\Facebook'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'clientId'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'facebook_client_id'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'clientSecret'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'facebook_client_secret'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;etc.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;]<br />&nbsp;&nbsp;&nbsp;&nbsp;...<br />]</span></code></pre>
+<p>Out of the box the following clients are provided:</p>
+<ul>
+<li><a href="yii-authclient-clients-facebook.html">Facebook</a>.</li>
+<li><a href="yii-authclient-clients-github.html">GitHub</a>.</li>
+<li>Google (via <a href="yii-authclient-clients-googleopenid.html">OpenID</a> and <a href="yii-authclient-clients-googleoauth.html">OAuth</a>).</li>
+<li><a href="yii-authclient-clients-linkedin.html">LinkedIn</a>.</li>
+<li><a href="yii-authclient-clients-live.html">Microsoft Live</a>.</li>
+<li><a href="yii-authclient-clients-twitter.html">Twitter</a>.</li>
+<li><a href="yii-authclient-clients-vkontakte.html">VKontakte</a>.</li>
+<li>Yandex (via <a href="yii-authclient-clients-yandexopenid.html">OpenID</a> and <a href="yii-authclient-clients-yandexoauth.html">OAuth</a>).</li>
+</ul>
+<p>Configuration for each client is a bit different. For OAuth it's required to get client ID and secret key from
+the service you're going to use. For OpenID it works out of the box in most cases.</p>
+<h2>Storing authorization data <a href="#storing-authorization-data" id="storing-authorization-data" class="hashlink">&para;</a></h2><p>In order to recognize the user authenticated via external service we need to store ID provided on first authentication
+and then check against it on subsequent authentications. It's not a good idea to limit login options to external
+services only since these may fail and there won't be a way for the user to log in. Instead it's better to provide
+both external authentication and good old login and password.</p>
+<p>If we're storing user information in a database the schema could be the following:</p>
+<pre><code class="language-sql">CREATE TABLE user (
+    id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username varchar(255) NOT NULL,
+    auth_key varchar(32) NOT NULL,
+    password_hash varchar(255) NOT NULL,
+    password_reset_token varchar(255),
+    email varchar(255) NOT NULL,
+    status smallint(6) NOT NULL DEFAULT 10,
+    created_at int(11) NOT NULL,
+    updated_at int(11) NOT NULL
+);
+
+CREATE TABLE auth (
+    id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id int(11) NOT NULL,
+    source string(255) NOT NULL,
+    source_id string(255) NOT NULL
+);
+
+ALTER TABLE auth ADD CONSTRAINT fk-auth-user_id-user-id
+FOREIGN KEY user_id REFERENCES user(id);
+</code></pre>
+<p>In the SQL above <code>user</code> is a standard table that is used in advanced application template to store user
+info. Each user can authenticate using multiple external services therefore each <code>user</code> record can relate to
+multiple <code>auth</code> records. In the <code>auth</code> table <code>source</code> is the name of the auth provider used and <code>source_id</code> is
+unique user identificator that is provided by external service after successful login.</p>
+<p>Using tables created above we can generate <code>Auth</code> model. No further adjustments needed.</p>
+<h2>Adding action to controller <a href="#adding-action-to-controller" id="adding-action-to-controller" class="hashlink">&para;</a></h2><p>Next step is to add <a href="yii-authclient-authaction.html">yii\authclient\AuthAction</a> to a web controller. Typically <code>SiteController</code>:</p>
+<pre><code class="language-php"><span style="color: #0000BB"></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">SiteController&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Controller<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">actions</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'auth'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'class'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'yii\authclient\AuthAction'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'successCallback'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #0000BB">$this</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'onAuthSuccess'</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;];<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">onAuthSuccess</span><span style="color: #007700">(</span><span style="color: #0000BB">$client</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$attributes&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$client</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getUserAttributes</span><span style="color: #007700">();<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**&nbsp;@var&nbsp;Auth&nbsp;$auth&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$auth&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">Auth</span><span style="color: #007700">::</span><span style="color: #0000BB">find</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">where</span><span style="color: #007700">([<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'source'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$client</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getId</span><span style="color: #007700">(),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'source_id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$attributes</span><span style="color: #007700">[</span><span style="color: #DD0000">'id'</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;])-&gt;</span><span style="color: #0000BB">one</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">Yii</span><span style="color: #007700">::</span><span style="color: #0000BB">$app</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">user</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">isGuest</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$auth</span><span style="color: #007700">)&nbsp;{&nbsp;</span><span style="color: #FF8000">//&nbsp;login<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$user&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$auth</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">user</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Yii</span><span style="color: #007700">::</span><span style="color: #0000BB">$app</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">user</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">login</span><span style="color: #007700">(</span><span style="color: #0000BB">$user</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{&nbsp;</span><span style="color: #FF8000">//&nbsp;signup<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if&nbsp;(isset(</span><span style="color: #0000BB">$attributes</span><span style="color: #007700">[</span><span style="color: #DD0000">'email'</span><span style="color: #007700">])&nbsp;&amp;&amp;&nbsp;isset(</span><span style="color: #0000BB">$attributes</span><span style="color: #007700">[</span><span style="color: #DD0000">'username'</span><span style="color: #007700">])&nbsp;&amp;&amp;&nbsp;</span><span style="color: #0000BB">User</span><span style="color: #007700">::</span><span style="color: #0000BB">find</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">where</span><span style="color: #007700">([</span><span style="color: #DD0000">'email'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$attributes</span><span style="color: #007700">[</span><span style="color: #DD0000">'email'</span><span style="color: #007700">]])-&gt;</span><span style="color: #0000BB">exists</span><span style="color: #007700">())&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Yii</span><span style="color: #007700">::</span><span style="color: #0000BB">$app</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getSession</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">setFlash</span><span style="color: #007700">(</span><span style="color: #DD0000">'error'</span><span style="color: #007700">,&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Yii</span><span style="color: #007700">::</span><span style="color: #0000BB">t</span><span style="color: #007700">(</span><span style="color: #DD0000">'app'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"User&nbsp;with&nbsp;the&nbsp;same&nbsp;email&nbsp;as&nbsp;in&nbsp;{client}&nbsp;account&nbsp;already&nbsp;exists&nbsp;but&nbsp;isn't&nbsp;linked&nbsp;to&nbsp;it.&nbsp;Login&nbsp;using&nbsp;email&nbsp;first&nbsp;to&nbsp;link&nbsp;it."</span><span style="color: #007700">,&nbsp;[</span><span style="color: #DD0000">'client'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$client</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getTitle</span><span style="color: #007700">()]),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$password&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">Yii</span><span style="color: #007700">::</span><span style="color: #0000BB">$app</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">security</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">generateRandomString</span><span style="color: #007700">(</span><span style="color: #0000BB">6</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$user&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">User</span><span style="color: #007700">([<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'username'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$attributes</span><span style="color: #007700">[</span><span style="color: #DD0000">'login'</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'email'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$attributes</span><span style="color: #007700">[</span><span style="color: #DD0000">'email'</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'password'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$password</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$user</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">generateAuthKey</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$user</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">generatePasswordResetToken</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$transaction&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$user</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getDb</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">beginTransaction</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$user</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">save</span><span style="color: #007700">())&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$auth&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Auth</span><span style="color: #007700">([<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'user_id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$user</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">id</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'source'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$client</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getId</span><span style="color: #007700">(),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'source_id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;(string)</span><span style="color: #0000BB">$attributes</span><span style="color: #007700">[</span><span style="color: #DD0000">'id'</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$auth</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">save</span><span style="color: #007700">())&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$transaction</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">commit</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Yii</span><span style="color: #007700">::</span><span style="color: #0000BB">$app</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">user</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">login</span><span style="color: #007700">(</span><span style="color: #0000BB">$user</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$auth</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getErrors</span><span style="color: #007700">());<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$user</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getErrors</span><span style="color: #007700">());<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{&nbsp;</span><span style="color: #FF8000">//&nbsp;user&nbsp;already&nbsp;logged&nbsp;in<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if&nbsp;(!</span><span style="color: #0000BB">$auth</span><span style="color: #007700">)&nbsp;{&nbsp;</span><span style="color: #FF8000">//&nbsp;add&nbsp;auth&nbsp;provider<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$auth&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Auth</span><span style="color: #007700">([<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'user_id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">Yii</span><span style="color: #007700">::</span><span style="color: #0000BB">$app</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">user</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">id</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'source'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$client</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getId</span><span style="color: #007700">(),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'source_id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$attributes</span><span style="color: #007700">[</span><span style="color: #DD0000">'id'</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$auth</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">save</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}</span></code></pre>
+<p><code>successCallback</code> method is called when user was successfully authenticated via external service. Via <code>$client</code> instance
+we can retrieve information received. In our case we'd like to:</p>
+<ul>
+<li>If user is guest and record found in auth then log this user in.</li>
+<li>If user is guest and record not found in auth then create new user and make a record in auth table. Then log in.</li>
+<li>If user is logged in and record not found in auth then try connecting additional account (save its data into auth table).</li>
+</ul>
+<p>Although, all clients are different they shares same basic interface <a href="yii-authclient-clientinterface.html">yii\authclient\ClientInterface</a>,
+which governs common API.</p>
+<p>Each client has some descriptive data, which can be used for different purposes:</p>
+<ul>
+<li><code>id</code> - unique client id, which separates it from other clients, it could be used in URLs, logs etc.</li>
+<li><code>name</code> - external auth provider name, which this client is match too. Different auth clients
+can share the same name, if they refer to the same external auth provider.
+For example: clients for Google OpenID and Google OAuth have same name "google".
+This attribute can be used inside the database, CSS styles and so on.</li>
+<li><code>title</code> - user friendly name for the external auth provider, it is used to present auth client
+at the view layer.</li>
+</ul>
+<p>Each auth client has different auth flow, but all of them supports <code>getUserAttributes()</code> method,
+which can be invoked if authentication was successful.</p>
+<p>This method allows you to get information about external user account, such as ID, email address,
+full name, preferred language etc. Note that for each provider fields available may vary in both existence and
+names.</p>
+<p>Defining list of attributes, which external auth provider should return, depends on client type:</p>
+<ul>
+<li><a href="yii-authclient-openid.html">yii\authclient\OpenId</a>: combination of <code>requiredAttributes</code> and <code>optionalAttributes</code>.</li>
+<li><a href="yii-authclient-oauth1.html">yii\authclient\OAuth1</a> and <a href="yii-authclient-oauth2.html">yii\authclient\OAuth2</a>: field <code>scope</code>, note that different
+providers use different formats for the scope.</li>
+</ul>
+<h3>Getting additional data via extra API calls <a href="#getting-additional-data-via-extra-api-calls" id="getting-additional-data-via-extra-api-calls" class="hashlink">&para;</a></h3><p>Both <a href="yii-authclient-oauth1.html">yii\authclient\OAuth1</a> and <a href="yii-authclient-oauth2.html">yii\authclient\OAuth2</a> provide method <code>api()</code>, which
+can be used to access external auth provider REST API. However this method is very basic and
+it may be not enough to access full external API functionality. This method is mainly used to
+fetch the external user account data.</p>
+<p>To use API calls, you need to setup <a href="yii-authclient-baseoauth.html#$apiBaseUrl-detail">yii\authclient\BaseOAuth::$apiBaseUrl</a> according to the
+API specification. Then you can call <a href="yii-authclient-baseoauth.html#api()-detail">yii\authclient\BaseOAuth::api()</a> method:</p>
+<pre><code class="language-php"><span style="color: #0000BB"></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">yii</span><span style="color: #007700">\</span><span style="color: #0000BB">authclient</span><span style="color: #007700">\</span><span style="color: #0000BB">OAuth2</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$client&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">OAuth2</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;...<br /><br /></span><span style="color: #0000BB">$client</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">apiBaseUrl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'https://www.googleapis.com/oauth2/v1'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$userInfo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$client</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">api</span><span style="color: #007700">(</span><span style="color: #DD0000">'userinfo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'GET'</span><span style="color: #007700">);</span></code></pre>
+<h2>Adding widget to login view <a href="#adding-widget-to-login-view" id="adding-widget-to-login-view" class="hashlink">&para;</a></h2><p>There's ready to use <a href="yii-authclient-widgets-authchoice.html">yii\authclient\widgets\AuthChoice</a> widget to use in views:</p>
+<pre><code class="language-php"><span style="color: #0000BB"></span><span style="color: #007700">&lt;?=&nbsp;</span><span style="color: #0000BB">yii</span><span style="color: #007700">\</span><span style="color: #0000BB">authclient</span><span style="color: #007700">\</span><span style="color: #0000BB">widgets</span><span style="color: #007700">\</span><span style="color: #0000BB">AuthChoice</span><span style="color: #007700">::</span><span style="color: #0000BB">widget</span><span style="color: #007700">([<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'baseAuthUrl'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #DD0000">'site/auth'</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'popupMode'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,<br />])&nbsp;</span><span style="color: #0000BB">?&gt;</span></code></pre>
+<h2>Creating your own auth clients <a href="#creating-your-own-auth-clients" id="creating-your-own-auth-clients" class="hashlink">&para;</a></h2><p>You may create your own auth client for any external auth provider, which supports
+OpenId or OAuth protocol. To do so, first of all, you need to find out which protocol is
+supported by the external auth provider, this will give you the name of the base class
+for your extension:</p>
+<ul>
+<li>For OAuth 2 use <a href="yii-authclient-oauth2.html">yii\authclient\OAuth2</a>.</li>
+<li>For OAuth 1/1.0a use <a href="yii-authclient-oauth1.html">yii\authclient\OAuth1</a>.</li>
+<li>For OpenID use <a href="yii-authclient-openid.html">yii\authclient\OpenId</a>.</li>
+</ul>
+<p>At this stage you can determine auth client default name, title and view options, declaring
+corresponding methods:</p>
+<pre><code class="language-php"><span style="color: #0000BB"></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">yii</span><span style="color: #007700">\</span><span style="color: #0000BB">authclient</span><span style="color: #007700">\</span><span style="color: #0000BB">OAuth2</span><span style="color: #007700">;<br /><br />class&nbsp;</span><span style="color: #0000BB">MyAuthClient&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">OAuth2<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;function&nbsp;</span><span style="color: #0000BB">defaultName</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">'my_auth_client'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;function&nbsp;</span><span style="color: #0000BB">defaultTitle</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">'My&nbsp;Auth&nbsp;Client'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;function&nbsp;</span><span style="color: #0000BB">defaultViewOptions</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'popupWidth'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">800</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'popupHeight'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">500</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;];<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}</span></code></pre>
+<p>Depending on actual base class, you will need to redeclare different fields and methods.</p>
+<h3><a href="yii-authclient-openid.html">yii\authclient\OpenId</a> <a href="#yiiauthclientopenid" id="yiiauthclientopenid" class="hashlink">&para;</a></h3><p>All you need is to specify auth URL, by redeclaring <code>authUrl</code> field.
+You may also setup default required and/or optional attributes.
+For example:</p>
+<pre><code class="language-php"><span style="color: #0000BB"></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">yii</span><span style="color: #007700">\</span><span style="color: #0000BB">authclient</span><span style="color: #007700">\</span><span style="color: #0000BB">OpenId</span><span style="color: #007700">;<br /><br />class&nbsp;</span><span style="color: #0000BB">MyAuthClient&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">OpenId<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$authUrl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'https://www.my.com/openid/'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$requiredAttributes&nbsp;</span><span style="color: #007700">=&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'contact/email'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;];<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$optionalAttributes&nbsp;</span><span style="color: #007700">=&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'namePerson/first'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'namePerson/last'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;];<br />}</span></code></pre>
+<h3><a href="yii-authclient-oauth2.html">yii\authclient\OAuth2</a> <a href="#yiiauthclientoauth2" id="yiiauthclientoauth2" class="hashlink">&para;</a></h3><p>You will need to specify:</p>
+<ul>
+<li>Auth URL by redeclaring <code>authUrl</code> field.</li>
+<li>Token request URL by redeclaring <code>tokenUrl</code> field.</li>
+<li>API base URL by redeclaring <code>apiBaseUrl</code> field.</li>
+<li>User attribute fetching strategy by redeclaring <code>initUserAttributes()</code> method.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-php"><span style="color: #0000BB"></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">yii</span><span style="color: #007700">\</span><span style="color: #0000BB">authclient</span><span style="color: #007700">\</span><span style="color: #0000BB">OAuth2</span><span style="color: #007700">;<br /><br />class&nbsp;</span><span style="color: #0000BB">MyAuthClient&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">OAuth2<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$authUrl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'https://www.my.com/oauth2/auth'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$tokenUrl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'https://www.my.com/oauth2/token'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$apiBaseUrl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'https://www.my.com/apis/oauth2/v1'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;function&nbsp;</span><span style="color: #0000BB">initUserAttributes</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">api</span><span style="color: #007700">(</span><span style="color: #DD0000">'userinfo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'GET'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}</span></code></pre>
+<p>You may also specify default auth scopes.</p>
+<blockquote><p>Note: Some OAuth providers may not follow OAuth standards clearly, introducing
+  differences, and may require additional efforts to implement clients for.</p>
+</blockquote>
+<h3><a href="yii-authclient-oauth1.html">yii\authclient\OAuth1</a> <a href="#yiiauthclientoauth1" id="yiiauthclientoauth1" class="hashlink">&para;</a></h3><p>You will need to specify:</p>
+<ul>
+<li>Auth URL by redeclaring <code>authUrl</code> field.</li>
+<li>Request token URL by redeclaring <code>requestTokenUrl</code> field.</li>
+<li>Access token URL by redeclaring <code>accessTokenUrl</code> field.</li>
+<li>API base URL by redeclaring <code>apiBaseUrl</code> field.</li>
+<li>User attribute fetching strategy by redeclaring <code>initUserAttributes()</code> method.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-php"><span style="color: #0000BB"></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">yii</span><span style="color: #007700">\</span><span style="color: #0000BB">authclient</span><span style="color: #007700">\</span><span style="color: #0000BB">OAuth1</span><span style="color: #007700">;<br /><br />class&nbsp;</span><span style="color: #0000BB">MyAuthClient&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">OAuth1<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$authUrl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'https://www.my.com/oauth/auth'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$requestTokenUrl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'https://www.my.com/oauth/request_token'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$accessTokenUrl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'https://www.my.com/oauth/access_token'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$apiBaseUrl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'https://www.my.com/apis/oauth/v1'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;function&nbsp;</span><span style="color: #0000BB">initUserAttributes</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">api</span><span style="color: #007700">(</span><span style="color: #DD0000">'userinfo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'GET'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}</span></code></pre>
+<p>You may also specify default auth scopes.</p>
+<blockquote><p>Note: Some OAuth providers may not follow OAuth standards clearly, introducing
+  differences, and may require additional efforts to implement clients for.</p>
+</blockquote>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 21 Mar 2015 22:11:26 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) shiftWindow();
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// focus the search field
+searchBox.focus();
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script><script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['site._setAccount', 'UA-5843896-1']);
+_gaq.push(['site._trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</body>
+
+<!-- Mirrored from www.yiiframework.com/doc-2.0/guide-security-auth-clients.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 May 2015 18:11:15 GMT -->
+</html>
