@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>JavaScript Sandbox</title>
+    <link rel="stylesheet" href="bootstrap.css"/>
+    <script type="text/javascript" src='bootstrap+jquery.js'></script>
+    <script type="text/javascript">
+        $(function () {
+
+            function log(obj){ return console.log(obj) }
+
+            var parent = {
+                a: "a val",
+                b: 'b val',
+                c: function () {
+                    log("I am a function of parent");
+                }
+            };
+
+            // In JS, an object can 'extend' another object:
+            var child = Object.create(parent);
+
+            // 1. You have access to all the 'parent' properties:
+            child.c();
+            log(child.a);
+
+            // 2. It has the same behavior, even if parent is modified on the go:
+            parent.d = "d value";
+            log(child.d);
+
+            // Important Note:
+            // How this works internally:
+            // When the compiler sees 'child.a',
+            // - it looks in 'child' object for property 'a'
+            // - does not find there, so it looks for 'parent.a'
+            // - it finds there and hence uses it
+
+            // - IF it did not find 'a' in 'parent' either, it would look for the grand parent's property 'a' i.e. Object.a
+            // Example:
+            log(child.toString()); // toString() is a method of Object object
+            log(child.z); // undefined
+
+
+        });
+    </script>
+</head>
+
+<body>
+</body>
+</html>
