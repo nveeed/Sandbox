@@ -1,0 +1,8 @@
+<section ng-show="product.images.length">
+    <img class="img-circle" style="width: 300px;height: 300px;" ng-src="{{product.images[gallery.current]}}" />
+    <ul class="list-inline thumbs">
+        <li class="thumbnail" ng-repeat="image in product.images">
+            <img style="width: 200px;height: 200px" ng-src="{{image}}" />
+        </li>
+    </ul>
+</section>
