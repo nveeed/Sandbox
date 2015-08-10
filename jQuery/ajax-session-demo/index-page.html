@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>jQuery SandBox</title>
+    <link rel="stylesheet" type="text/css" href="../assets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/custom.css">
+    <script type="text/javascript" src='../assets/jquery.js'></script>
+    <script type="text/javascript" src='../assets/bootstrap.min.js'></script>
+    <script type="text/javascript">
+
+    $(function(){
+
+        updateResult();
+
+        $("#my-form").submit(function () {
+            console.log("form submitted.");
+            $.post("http://localhost/--Sandbox--/jQuery/ajax-session-demo/ajax-handler.php",$("#my-form").serialize(), function (response) {
+                console.log("response received.");
+                console.log(response);
+            });
+            updateResult();
+            return false;
+        });
+
+        function updateResult(){
+            $.get("http://localhost/--Sandbox--/jQuery/ajax-session-demo/is-logged-in.php", function (response) {
+                var message = "";
+                if(response){
+                    message = "You are logged in :)<br>" + response+"<br>";
+                }else{
+                    message = "You are not logged in :(<br>"
+                }
+                $("#results").append( message );
+            });
+        }
+
+    });
+
+
+    </script>
+</head>
+
+<body>
+
+<form id="my-form">
+    <input type="text" name="username" value="naveed"/>
+    <input type="password" name="password" value="whatever"/>
+    <input type="submit" value="Login"/>
+</form>
+
+<div id="results">
+</div>
+
+</body>
+</html>
