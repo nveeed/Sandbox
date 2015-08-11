@@ -13,7 +13,7 @@
 
         $("#my-form").submit(function () {
             console.log("form submitted.");
-            $.post("http://localhost/--Sandbox--/jQuery/ajax-session-demo/ajax-handler.php",$("#my-form").serialize(), function (response) {
+            $.post("ajax-handler.php",$("#my-form").serialize(), function (response) {
                 console.log("response received.");
                 console.log(response);
             });
@@ -22,7 +22,7 @@
         });
 
         function updateResult(){
-            $.get("http://localhost/--Sandbox--/jQuery/ajax-session-demo/is-logged-in.php", function (response) {
+            $.get("is-logged-in.php", function (response) {
                 var message = "";
                 if(response){
                     message = "You are logged in :)<br>" + response+"<br>";
