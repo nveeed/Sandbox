@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>jQuery SandBox</title>
+    <link rel="stylesheet" href="../_libraries/bootstrap.css"/>
+    <script type="text/javascript" src='../_libraries/bootstrap+jquery.js'></script>
+    <script type="text/javascript">
+        
+        $(function(){
+
+            function callFunc(fn){
+                fn();
+            }
+
+            function someFunc(){
+                console.log("I'm being called...");
+            }
+
+            callFunc(someFunc);
+
+            callFunc(function () {
+                console.log("I'm being called too...");
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="output"></div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>jQuery SandBox</title>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css">
+    <script type="text/javascript" src='assets/jquery.js'></script>
+    <script type="text/javascript" src='assets/bootstrap.min.js'></script>
+    <script type="text/javascript">
+    $(function(){});
+    </script>
+
+    <style>
+        .center-vertical {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .loading{
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.8);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        #loading-text{
+            margin: 0;
+            color: lightcyan;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt laborum magnam quaerat quam quidem vero voluptate! Accusantium deserunt doloremque eveniet hic maiores molestiae nesciunt quo recusandae voluptate. Dicta, porro, reprehenderit.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt laborum magnam quaerat quam quidem vero voluptate! Accusantium deserunt doloremque eveniet hic maiores molestiae nesciunt quo recusandae voluptate. Dicta, porro, reprehenderit.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt laborum magnam quaerat quam quidem vero voluptate! Accusantium deserunt doloremque eveniet hic maiores molestiae nesciunt quo recusandae voluptate. Dicta, porro, reprehenderit.</p>
+
+    <div class="loading">
+        <h2 id="loading-text" class="center-vertical"><img id="loading-img" src="assets/loading.gif"/> Loading ...</h2>
+    </div>
+
+</body>
+</html>
