@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>JavaScript SandBox</title>
+    <link rel="stylesheet" href="../_libraries/bootstrap.css"/>
+    <script type="text/javascript" src='../_libraries/bootstrap+jquery.js'></script>
+    <script type="text/javascript" src='common.js'></script>
+    <script type="text/javascript">
+        (function () {
+
+            log(null===undefined, "null===undefined");
+            log(null==undefined, "null==undefined");
+            log(NaN==null, "NaN==null");
+            log(NaN===null, "NaN===null");
+            log(null===false, "null===false");
+            log(null==false, "null==false");
+
+            log("37" - 7, '"37" - 7');
+            log("37" + 7, '"37" + 7');
+            log(+"37" + 7, '+"37" + 7');
+
+            var myList = ['home', , 'school', ];
+            log(myList);
+            log(myList[1]);
+
+            var a = 77;
+            var b = 077;
+            var c = 0x77;
+            log(a,"77 (decimal)");
+            log(b,"077 (octal)");
+            log(c,"0x77 (hexadecimal)");
+
+            log(3.1415926);
+            log(-.123456789);
+            log(-3.1E+12);
+            log(.1e-2);
+
+            console.log("list:",myList);
+
+        })();
+    </script>
+</head>
+
+<body>
+    <div id="output">See Console Please</div>
+</body>
+</html>
