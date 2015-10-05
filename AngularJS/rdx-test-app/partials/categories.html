@@ -1,0 +1,6 @@
+<div ng-controller="CategoriesCtrl">
+    <ul class="nav nav-tabs">
+        <li ng-repeat="category in categories | filter: {is_active:1}"><a href="#">{{category.name}}</a></li>
+    </ul>
+    <!--<pre>{{categories|json}}</pre>-->
+</div>

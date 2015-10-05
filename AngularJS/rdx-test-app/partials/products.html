@@ -1,0 +1,18 @@
+<h2>Products</h2>
+
+<div class="products-container">
+    <p><small>showing {{products.length}} products</small></p>
+    <div class="product-info-box" ng-repeat="product in products">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{product.name}}</h3>
+                <h4>$ {{product.final_price_with_tax}}</h4>
+            </div>
+            <div class="panel-body">
+                <img class="product-img" ng-src="{{product.image_url}}"/>
+                <div ng-bind-html="product.description" class="product-detail"></div>
+            </div>
+        </div>
+    </div>
+
+</div>

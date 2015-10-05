@@ -5,7 +5,7 @@
  * Time: 3:56 PM
  */
 
-header("Access-Control-Allow-Origin: http://localhost:63342");
+header("Access-Control-Allow-Origin: http://localhost");
 
 if(isset($_POST['data'])){
     echo "<p>Hi there, this is the response from the server. You entered the following data: {$_POST['data']}.</p>";
