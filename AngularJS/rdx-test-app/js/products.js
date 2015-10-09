@@ -6,26 +6,32 @@ angular.module('myApp.products', ['ngRoute','ngSanitize'])
     });
 }])
 .controller('ProductsCtrl', ['$scope','$http', function(scope,$http) {
-    //$("#loading-div").show();
-    //$http.get(rdxTestAppGlobalVars.baseUrl+"/api/soap.php?a=category.assignedProducts&f=11").then(function (response) {
-    //    scope.products = response.data;
-    //    $("#loading-div").hide();
-    //});
-    /*$http.get("http://localhost/_Sandbox_/AngularJS/rdx-test-app/api/get-request-token.php").then(function (response) {
-        var token = response.data.oauth_token;
-        var secret = response.data.oauth_token_secret;
-        var query = "oauth_token="+token+"&oauth_token_secret="+secret;
-        var url = "http://localhost/_Sandbox_/AngularJS/rdx-test-app/api/get-access-token.php?"+query;
-        $http.get(url).then(function (response) {
-            var token = response.data.oauth_token;
-            var secret = response.data.oauth_token_secret;
-            var query = "oauth_token="+token+"&oauth_token_secret="+secret;
-            var url = "http://localhost/_Sandbox_/AngularJS/rdx-test-app/api/get-data.php?"+query;
-            $http.get(url).then(function (response) {
-                scope.products = response.data;
+        scope.curPage = 1;
+        scope.pageSize = 10;
+        scope.products = [];
+
+        var url = function () {
+            return rdxTestAppGlobalVars.apiUrl+"products" +
+            "?category="+ scope.activeCategory.entity_id +
+            "&curPage=" + scope.curPage +
+            "&pageSize=" + scope.pageSize;
+        };
+
+        scope.$watch('activeCategory', function(category){
+            scope.products = [];
+            loadProducts();
+        });
+
+        scope.loadMoreProducts = function () {
+            loadProducts();
+        };
+
+        var loadProducts = function () {
+            $("#loading-div").show();
+            $http.get(url()).then(function (response) {
+                scope.products = scope.products.concat(response.data.data);
                 $("#loading-div").hide();
             });
-        });
-    });*/
+        };
 
 }]);

@@ -16,6 +16,6 @@ config(['$routeProvider', '$locationProvider', function($routeProvider,$location
     $locationProvider.html5Mode(true);
 }]);
 
+// @codekit-append "js/config.js"
 // @codekit-append "js/categories.js"
 // @codekit-append "js/products.js"
-// @codekit-append "js/config.js"

@@ -1,6 +1,8 @@
 <div ng-controller="CategoriesCtrl">
     <ul class="nav nav-tabs">
-        <li ng-repeat="category in categories | filter: {is_active:1}"><a href="#">{{category.name}}</a></li>
+        <li ng-repeat="category in categories" ng-class="{active: category.entity_id==activeCategory.entity_id}">
+            <a href="javascript:void(0)" ng-click="setActiveCat(category)">{{category.name}}</a>
+        </li>
     </ul>
     <!--<pre>{{categories|json}}</pre>-->
 </div>

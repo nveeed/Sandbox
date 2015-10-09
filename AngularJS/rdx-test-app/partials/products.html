@@ -6,7 +6,7 @@
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">{{product.name}}</h3>
-                <h4>$ {{product.final_price_with_tax}}</h4>
+                <h4>$ {{product.price}}</h4>
             </div>
             <div class="panel-body">
                 <img class="product-img" ng-src="{{product.image_url}}"/>
@@ -14,5 +14,7 @@
             </div>
         </div>
     </div>
+
+    <p><button class="btn btn-primary" ng-click="loadMoreProducts()">Load More</button></p>
 
 </div>
