@@ -3,10 +3,12 @@
 angular.module('myApp', [
   'ngRoute',
   'ngAnimate',
-  'Home'
+  'Home',
+	'AboutUs'// append more modules here
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});
 }]);
 
 // @codekit-append "pages/home/home.js"
+// append more files here
