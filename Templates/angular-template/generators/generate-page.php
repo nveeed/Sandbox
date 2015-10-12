@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__."/helper.php";
-class MyGenerator{
+class PageGenerator{
     public $name;
     public $dir;
     public $moduleName;
@@ -25,23 +25,42 @@ class MyGenerator{
         // insert in app.js, module dependency
         $this->insertModuleDependency();
         // insert in app.js, codekit declaration
+        $this->insertCodeKitDeclaration();
     }
 
     private function insertModuleDependency()
     {
         $content = file_get_contents($this->appJsFilePath);
-        $placeHolderStr = "append more modules here";
-        $placeHolder = "// $placeHolderStr";
-        $regex = "/\/\/ $placeHolderStr/";
+        pr($content,"app.js before");
         $moduleContent = "'{$this->moduleName}'";
-        $content = preg_replace($regex,",\n\t".$moduleContent.$placeHolder,$content);
-        file_put_contents($this->appJsFilePath,$content);
+        echo "Module to append: $moduleContent<br>";
+        echo "pos: ".strpos($content,$moduleContent)."<br>";
+        if( strpos($content,$moduleContent) === false ) {
+            $placeHolder = "// append more modules here";
+            $content = str_replace($placeHolder, "\t".$moduleContent.",\n".$placeHolder, $content);
+            file_put_contents($this->appJsFilePath, $content);
+        }
+    }
+
+    private function insertCodeKitDeclaration()
+    {
+        $content = file_get_contents($this->appJsFilePath);
+        $fileName = "pages/$this->name/$this->name.js";
+        echo "File Name to append: $fileName<br>";
+        echo "pos: ".strpos($content,$fileName)."<br>";
+        if( strpos($content,$fileName) === false ){
+            $placeHolderStr = "// append more files here";
+            $fileContent = '// @codekit-append "'.$fileName.'"';
+            $content = str_replace($placeHolderStr,$fileContent."\n".$placeHolderStr,$content);
+            file_put_contents($this->appJsFilePath,$content);
+        }
+        pr($content,"app.js after");
     }
 
     private function generateFile($file,$content)
     {
         file_put_contents($file,$content);
-        echo "generated file: ".$file;
+        echo "generated file: ".$file."<br>";
     }
 
     private function getJsFileContents(){
@@ -64,12 +83,14 @@ angular.module('{$this->moduleName}', ['ngRoute'])
 
 }
 
+$generator = new PageGenerator("");
 if( !empty($_POST['name']) )
 {
-    (new MyGenerator($_POST['name']))->generate();
+    $generator = new PageGenerator($_POST['name']);
+    $generator->generate();
 }
 ?>
 <form method="post">
-    <input type="text" name="name"/>
+    <input type="text" name="name" value="<?=$generator->name?>"/>
     <button type="submit">Generate</button>
 </form>

@@ -11,4 +11,5 @@ config(['$routeProvider', function($routeProvider) {
 }]);
 
 // @codekit-append "pages/home/home.js"
+// @codekit-append "pages/about-us/about-us.js"
 // append more files here
