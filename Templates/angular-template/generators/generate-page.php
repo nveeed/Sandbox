@@ -37,7 +37,7 @@ class PageGenerator{
         echo "pos: ".strpos($content,$moduleContent)."<br>";
         if( strpos($content,$moduleContent) === false ) {
             $placeHolder = "// append more modules here";
-            $content = str_replace($placeHolder, "\t".$moduleContent.",\n".$placeHolder, $content);
+            $content = str_replace($placeHolder, ",\n\t".$moduleContent.$placeHolder, $content);
             file_put_contents($this->appJsFilePath, $content);
         }
     }
