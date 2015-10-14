@@ -4,18 +4,15 @@
  * Date: 5/6/2015
  * Time: 4:03 PM
  */
+$var ="0";
+if(empty($var))
+    echo "PHP considers '0' as empty. What a shame..";
+echo "<hr>";
 
-
-if( 0 == "asd0123" ){
-    echo '0 == "asd0123"';
-}else{
-    echo "nop";
-}
 echo "<hr>";
 if( "6" == " 6" ){
     echo '"6" == " 6"';
 }
-echo "<hr>";
 
 if( "4.2" == "4.20" ){
     echo '"4.2" == "4.20"';
@@ -28,9 +25,9 @@ if( '0x10' == '16' ){
 
 echo "<hr>";
 $var1 = 0;
-$var2 = "Naveed";
-if( $var1 === $var2 ){
-    echo "{$var1} === {$var2}";
+$var2 = "nawaz sharif";
+if( $var1 == $var2 ){
+    echo "{$var1} == {$var2}";
 }
 
 echo "<hr>";
@@ -57,11 +54,13 @@ echo $vehicle;
 echo "<hr>";
 
 function someFunc(){ echo "calling someFunc()"; }
-somefunc();
+somefunc(); // function names are case insensitive
+$myVar = 12;
+echo $myvar; // error. variable names are case sensitive
 echo "<hr>";
 
 
-$first  = array("foo" => 123, "bar" => 456);
-$second = array("foo" => 456, "bar" => 123);
+$first  = array("a" => 123, "b" => 456);
+$second = array("a" => 456, "b" => 123);
 var_dump(array_diff($first, $second));
 echo "<hr>";
