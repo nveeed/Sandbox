@@ -7,7 +7,7 @@
  */
 
 class Person {
-    public $name;
+    //public $name;
 
     /**
      * @return mixed
@@ -25,6 +25,24 @@ class Person {
     {
         echo "calling ".__FUNCTION__;
         $this->name = $name;
+    }
+
+    public function __get($prop)
+    {
+        if($this->hasGetter($prop))
+            return $this->get($prop);
+        return $this->$prop;
+    }
+
+    private function hasGetter($prop)
+    {
+        return method_exists($this,"get".ucfirst($prop));
+    }
+
+    private function get($prop)
+    {
+        $method = "get".ucfirst($prop);
+        return $method($prop);
     }
 }
 
