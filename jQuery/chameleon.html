@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>jQuery SandBox</title>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/custom.css">
+    <script type="text/javascript" src='assets/jquery.js'></script>
+    <script type="text/javascript" src='assets/bootstrap.min.js'></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+            jQuery(".girgit").hover(function(){
+                var angle = Math.round( Math.random() * 360 );
+                jQuery(this).css("-webkit-filter","hue-rotate("+angle+"deg)");
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <p>Hover over the image to see the effect</p>
+
+    <p><img class="girgit" src="assets/free-delivery.png" alt=""/></p>
+
+</body>
+</html>

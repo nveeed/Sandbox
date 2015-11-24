@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>jQuery SandBox</title>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/custom.css">
+    <script type="text/javascript" src='assets/jquery.js'></script>
+    <script type="text/javascript" src='assets/bootstrap.min.js'></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".read-more").each(function(){
+                var elem = $(this);
+                var smallHeight = elem.data("read-more-height"); if(!smallHeight) smallHeight = 100;
+                var fullHeight = elem.height();
+
+                if(smallHeight < fullHeight)
+                {
+                    var content = elem.html();
+                    var readMoreMarkup = "<a class='read-more-link' href='#'> ... Read More</a>";
+                    var readLessMarkup = "<a class='read-less-link' href='#'> Read Less</a>";
+
+                    elem.html("<div class='inner-container'>"+content+"</div>")
+                            .append(readMoreMarkup).append(readLessMarkup);
+
+                    var innerContainer = elem.find(".inner-container");
+                    var readMoreLink = elem.find(".read-more-link");
+                    var readLessLink = elem.find(".read-less-link");
+
+                    innerContainer.height(smallHeight).css({"overflow-y":"hidden","width":"100%"});
+                    readLessLink.hide();
+
+                    readMoreLink.click(function () {
+                        innerContainer.height(fullHeight);
+                        $(this).hide();
+                        readLessLink.show();
+                        return false;
+                    });
+
+                    readLessLink.click(function () {
+                        innerContainer.height(smallHeight);
+                        $(this).hide();
+                        readMoreLink.show();
+                        return false;
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <p class="read-more" data-read-more-height="150">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequatur corporis cumque debitis, dicta dignissimos doloremque dolorum ducimus ex facere fugiat id maxime neque nobis perspiciatis quasi qui sapiente voluptatum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum ipsam omnis qui quidem voluptate voluptates. Alias aliquid autem beatae consequuntur, cum eum ipsa nisi non quae quasi similique, temporibus voluptas?
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>jQuery SandBox</title>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/custom.css">
+    <script type="text/javascript" src='assets/jquery.js'></script>
+    <script type="text/javascript" src='assets/bootstrap.min.js'></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".read-more").each(function(){
+                var elem = $(this);
+                var length = elem.data("length"); if(!length) length = 100;
+                var textAll = elem.text();
+                var textTrn = textAll.substr(0,length);
+                var readMoreMarkup = "<a class='read-more-link' href='#'> ... Read More</a>";
+                var readLessMarkup = "<a class='read-less-link' href='#'> Read Less</a>";
+
+                elem.html("<span class='inner-text'>"+textTrn+"</span>").append(readMoreMarkup).append(readLessMarkup);
+
+                var readMoreLink = elem.find(".read-more-link");
+                var readLessLink = elem.find(".read-less-link");
+                var innerText = elem.find(".inner-text");
+
+                readLessLink.hide();
+
+                readMoreLink.click(function () {
+                    innerText.text(textAll);
+                    $(this).hide();
+                    readLessLink.show();
+                });
+
+                readLessLink.click(function () {
+                    innerText.text(textTrn);
+                    $(this).hide();
+                    readMoreLink.show();
+                });
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <p class="read-more" data-length="200">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequatur corporis cumque debitis, dicta dignissimos doloremque dolorum ducimus ex facere fugiat id maxime neque nobis perspiciatis quasi qui sapiente voluptatum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum ipsam omnis qui quidem voluptate voluptates. Alias aliquid autem beatae consequuntur, cum eum ipsa nisi non quae quasi similique, temporibus voluptas?
+    </p>
+
+</body>
+</html>
