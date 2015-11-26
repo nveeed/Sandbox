@@ -29,11 +29,11 @@ class Person{
         return ucwords($this->name);
     }
 }
+
 $person = new Person();
 ?>
-
 <pre>
-    <h2>Serialized Result (Object):</h2>
+    <h2>Serialized Result: (Object)</h2>
     <?php var_dump(serialize($person))?>
     <h2>Unserialized Result: (Object)</h2>
     <?php var_dump(unserialize(serialize($person)))?>
