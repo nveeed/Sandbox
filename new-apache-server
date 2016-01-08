@@ -1,18 +1,18 @@
 1. config file
- - sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/site.com.conf
+ - sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/social.dev.conf
 
 2. edit content:
- - sudo gedit /etc/apache2/sites-available/site.com.conf
- - ServerAdmin admin@site.com
-   ServerName site.com
-   ServerAlias www.site.com
-   DocumentRoot /var/www/site.com-directory
+ - sudo gedit /etc/apache2/sites-available/social.dev.conf
+ - ServerAdmin admin@social.dev
+   ServerName social.dev
+   ServerAlias www.social.dev
+   DocumentRoot /var/www/html/social.dev-directory
 
 3. Enable the New Virtual Host Files
- - sudo a2ensite site.com.conf
+ - sudo a2ensite social.dev.conf
 
 4. sudo service apache2 restart
 
 4. Set Up Local Hosts File
  - sudo gedit /etc/hosts
- - 127.0.0.1 site.com
+ - 127.0.0.1 social.dev

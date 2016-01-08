@@ -1,12 +1,12 @@
 <?php
 /**
- * Created by Naveed Hassan
+ * Created by Naveed ul Hassan Malik
  * Date: 5/6/2015
  * Time: 4:03 PM
  */
 $var ="0";
 if(empty($var))
-    echo "PHP considers '0' as empty. What a shame..";
+    echo "PHP considers '0' as empty. Yeah, it's true, unfortunately..";
 echo "<hr>";
 
 echo "<hr>";
@@ -24,8 +24,13 @@ if( '0x10' == '16' ){
 }
 
 echo "<hr>";
+echo 0x10;
+echo "<br>";
+echo '0x10';
+
+echo "<hr>";
 $var1 = 0;
-$var2 = "nawaz sharif";
+$var2 = "Johnny Depp";
 if( $var1 == $var2 ){
     echo "{$var1} == {$var2}";
 }
@@ -46,11 +51,13 @@ if( (string)"123" < (string)"0124" ){
 }
 echo "<hr>";
 
-$arg = 'A';
-$vehicle =  $arg == 'A' ? 'airplane' :
-            $arg == 'B' ? 'bus' :
-            $arg == 'T' ? 'train' : 'feet';
-echo $vehicle;
+$arg = 1;
+$num =  $arg == 1 ? 'one' : $arg == 2 ? 'two' : 'some other value';
+echo $num; // prints two
+echo "<hr>";
+
+$num =  $arg == 1 ? 'one' : ($arg == 2 ? 'two' : 'some other value');
+echo $num; // prints one
 echo "<hr>";
 
 function someFunc(){ echo "calling someFunc()"; }
@@ -61,6 +68,8 @@ echo "<hr>";
 
 
 $first  = array("a" => 123, "b" => 456);
-$second = array("a" => 456, "b" => 123);
-var_dump(array_diff($first, $second));
+$second = array("c" => 456, "d" => 123);
+var_dump(array_diff($first, $second)); // array(0) {}
+echo "<hr>";
+var_dump(array_diff_assoc($first, $second)); // array(2) { ["a"]=> int(123) ["b"]=> int(456) }
 echo "<hr>";
