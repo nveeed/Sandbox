@@ -1,72 +1,18 @@
 <html>
 <head>
-    <title>jQuery SandBox</title>
-    <link rel="stylesheet" href="../_libraries/bootstrap.css"/>
-    <script type="text/javascript" src='../_libraries/bootstrap+jquery.js'></script>
+    <title>Javascript SandBox</title>
     <script type="text/javascript">
 
-        $(function(){
-            var logThis = function () {
-                console.log(this);
-            };
+        (function(){
+            function logThis () { console.log(this); };
+            function callAnotherFunc (fn) { fn(); }
             var obj1 = {
                 title: 'Obj1',
-                fn1: logThis,
-                subObj: {
-                    title: 'subObj',
-                    subFn: logThis,
-                    subObj2: {
-                        title: 'subObj2',
-                        subFn2: logThis
-                    }
-                }
+                fn1: callAnotherFunc
             };
 
-            function callAnotherFunc(fn){
-                fn();
-            }
-
-            function callAnotherFuncWithCallMethod(fn,obj){
-                fn.call(obj);
-            }
-
-            // Binding of this parameter:
-
-            // ** Case1:
-            // Normally, this is bound to 'the object just left to the dot of method invocation'. e.g.
-            obj1.fn1();                      // 'this' refers to obj1
-            obj1.subObj.subFn();             // 'this' refers to subObj
-            obj1.subObj.subObj2.subFn2();    // 'this' refers to subObj2
-
-            // ** Case2:
-            // When there is no dot, this is bound to the Window object
-            logThis();                       // 'this' refers to the Window object
-
-            // ** Case3:
-            // Accessing this in global scope
-            console.log(this);               // 'this' refers to the global (document) object
-
-            // ** Case4:
-            // Using call() to override the default behavior:
-            // Whatever object you pass to call, it will be bound to this
-            logThis.call(obj1);              // 'this' refers to obj1. We are 'binding' 'this' to 'obj1'
-            logThis.call(obj1.subObj);       // 'this' refers to subObj. We are 'binding' 'this' to 'subObj'
-            obj1.fn1.call(obj1.subObj);      // 'this' refers to subObj. call() overrides 'this'
-
-            // ** Case5:
-            // Inside a callback function:
-            // It depends on what is written inside the calling function
-            // Example1:
-            callAnotherFunc(logThis);
-            // callAnotherFunc() simply calls the function i.e. fn()
-            // So this is same as Case2 & this will be bound to Window object
-            // Example2:
-            console.log("callAnotherFuncWithCallMethod(logThis,obj1):");
-            callAnotherFuncWithCallMethod(logThis,obj1);
-            // Here, callAnotherFuncWithCallMethod() is defined such that it passes it's second parameter to the call() method
-            // Hence this refers to obj1 here
-
-        });
+            obj1.fn1(logThis);
+        })();
     </script>
 </head>
 
