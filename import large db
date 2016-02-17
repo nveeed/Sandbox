@@ -1,11 +1,13 @@
 mysql -u root -p
 
-set global net_buffer_length=1000000; --Set network buffer length to a large byte number
+use qpdev_devenv;
 
-set global max_allowed_packet=1000000000; --Set maximum allowed packet size to a large byte number
+set global net_buffer_length=1000000;
 
-SET foreign_key_checks = 0; --Disable foreign key checking to avoid delays,errors and unwanted behaviour
+set global max_allowed_packet=1000000000;
 
-source file.sql --Import your sql dump file
+SET foreign_key_checks = 0;
+
+source qpdev_devenv.sql;
 
 SET foreign_key_checks = 1; --Remember to enable foreign key checks when procedure is complete!

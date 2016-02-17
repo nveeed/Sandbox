@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Socket.io test</title>
+    <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="libs/socket.io-1.4.5.js"></script>
+    <script>
+        var socket = io();
+        var num = 1;
+        socket.on('message', function (data) {
+//            $("#messages").append("<li>message # "+num+"</li>");
+//            num ++;
+            console.log(data);
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+
+<ul id="messages">
+
+</ul>
+
+</div>
+
+</body>
+</html>

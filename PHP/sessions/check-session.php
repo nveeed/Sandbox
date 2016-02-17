@@ -10,3 +10,10 @@ session_start();
 <pre>
     <?php print_r($_SESSION) ?>
 </pre>
+
+
+
+<script src="../../_libraries/bootstrap+jquery.js"></script>
+<button onclick="$('#output').load('ajax-handler.php')">Check Session via Ajax</button>
+<div id="output"></div>
+
