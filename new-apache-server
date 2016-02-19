@@ -1,18 +1,18 @@
 1. config file
- - sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/test.dev.conf
+ - sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/netpetibles.dev.conf
 
 2. edit content:
- - sudo gedit /etc/apache2/sites-available/test.dev.conf
- - ServerAdmin admin@test.dev
-   ServerName test.dev
-   ServerAlias www.test.dev
-   DocumentRoot /var/www/html/test/public
+ - sudo gedit /etc/apache2/sites-available/netpetibles.dev.conf
+ - ServerAdmin admin@netpetibles.dev
+   ServerName netpetibles.dev
+   ServerAlias www.netpetibles.dev
+   DocumentRoot /var/www/html/netpetibles/public
 
 3. Enable the New Virtual Host Files
- - sudo a2ensite test.dev.conf
+ - sudo a2ensite netpetibles.dev.conf
 
 4. sudo service apache2 restart
 
 4. Set Up Local Hosts File
  - sudo gedit /etc/hosts
- - 127.0.0.1 test.dev
+ - 127.0.0.1 netpetibles.dev
