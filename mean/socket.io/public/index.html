@@ -11,18 +11,19 @@
     <script src="libs/socket.io-1.4.5.js"></script>
     <script>
         var socket = io();
-        var num = 1;
-        socket.on('message', function (data) {
-//            $("#messages").append("<li>message # "+num+"</li>");
-//            num ++;
-            console.log(data);
+        socket.on('users-updated', function (data) {
+            var output = "";
+            for( var $i = 0; $i < data.length; $i ++ ){
+                output += "<li>"+data[$i]['name']+"</li>";
+            }
+            $("#output").html(output);
         });
     </script>
 </head>
 <body>
 <div class="container">
 
-<ul id="messages">
+<ul id="output">
 
 </ul>
 

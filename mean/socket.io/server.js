@@ -25,7 +25,7 @@ io.on('connection', function(socket){
     fs.readFile('users.json', 'utf8', function (err, data) {
         if (err) throw err;
         obj = JSON.parse(data);
-        io.emit("message",obj);
+        io.emit("users-updated",obj);
     });
 });
 

@@ -10,4 +10,6 @@ setcookie( "my-cookie", "cookie value", time() + 7 * 24 * 3600 );
 <pre>
     <h2>Session:</h2>
     <?php print_r($_SESSION) ?>
+    <?php print_r(session_save_path()) ?>
+    <?php print_r(sys_get_temp_dir()) ?>
 </pre>

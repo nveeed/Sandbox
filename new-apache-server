@@ -1,18 +1,18 @@
 1. config file
- - sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/netpetibles.dev.conf
+ - sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/email-parser.dev.conf
 
 2. edit content:
- - sudo gedit /etc/apache2/sites-available/netpetibles.dev.conf
- - ServerAdmin admin@netpetibles.dev
-   ServerName netpetibles.dev
-   ServerAlias www.netpetibles.dev
-   DocumentRoot /var/www/html/netpetibles/public
+ - sudo gedit /etc/apache2/sites-available/email-parser.dev.conf
+ - ServerAdmin admin@email-parser.dev
+   ServerName email-parser.dev
+   ServerAlias www.email-parser.dev
+   DocumentRoot /var/www/html/email-parser/public
 
 3. Enable the New Virtual Host Files
- - sudo a2ensite netpetibles.dev.conf
+ - sudo a2ensite email-parser.dev.conf
 
 4. sudo service apache2 restart
 
 4. Set Up Local Hosts File
  - sudo gedit /etc/hosts
- - 127.0.0.1 netpetibles.dev
+ - 127.0.0.1 email-parser.dev
