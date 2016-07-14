@@ -2,9 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Time Ago</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script>
+        (function () {
+
+            angular.module('myApp',[])
+                    .filter('timeAgo', timeAgo)
+                    .filter('count', countFilter)
+            ;
+
+            function countFilter(){
+                return function (input,singular,plural) {
+                    if(!input) return "";
+
+                    if(!plural) plural = singular+'s';
+
+                    if(input == 1) return input + ' ' + singular;
+
+                    return input + ' ' + plural;
+                };
+            }
+
+            function timeAgo() {
+                return function (input) {
+                    var seconds = parseInt(input);
+                    var output = "";
+
+                    if (!seconds) return input;
+
+                    var h = Math.floor(seconds / 3600);
+                    if (h > 0) output += h + " hours, ";
+
+                    var rem = seconds % 3600;
+                    var m = Math.floor(rem / 60);
+                    if (m > 0) output += m + " minutes";
+
+                    if (!output) return "Less than a minute ago";
+
+                    return output + ' ago';
+                };
+            }
+        })();
+    </script>
 </head>
-<body>
+<body ng-app="myApp">
+
+<input type="text" ng-model="seconds" value="4000">
+
+<p>{{seconds}}</p>
+<p>{{seconds | timeAgo }}</p>
+
+<p>{{''|count:'call'}}</p>
+<p>{{'no'|count:'call'}}</p>
+<p>{{0|count:'call'}}</p>
+<p>{{1|count:'call'}}</p>
+<p>{{2|count:'call'}}</p>
 
 </body>
 </html>
