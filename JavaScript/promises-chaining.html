@@ -17,18 +17,23 @@
             }
 
             var successHandler = function (res) {
-                console.log('It worked. Here is the response:');
+                console.log('Inside successHandler. Here is the response:');
                 console.log(res);
+                return wait(1).then(function (res) {
+                    console.log('Inside then of successHandler. Here is the response:');
+                    console.log(res);
+                    return "returned from successHandler";
+                });
             };
 
-            var errorHandler = function (err) {
-                console.log('error occurred:');
-                console.log(err);
+            var successHandler2 = function (res) {
+                console.log('Inside successHandler2. Here is the response:');
+                console.log(res);
+                return "returned from successHandler2";
             };
 
-            wait(2).then(successHandler).catch(errorHandler);
-
-            console.log("I'm called after wait but it does not mean that I'll be called after success or error.");
+            var ret = wait(1).then(successHandler).then(successHandler2).then(successHandler);
+            console.log(ret);
 
         })();
     </script>

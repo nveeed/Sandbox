@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>JavaScript Promises</title>
+    <link rel="stylesheet" href="../_libraries/bootstrap.css"/>
+    <script type="text/javascript" src='../_libraries/bootstrap+jquery.js'></script>
+    <script type="text/javascript" src='common.js'></script>
+    <script type="text/javascript">
+        (function () {
+
+            function wait(duration) {
+                console.log('waiting '+duration+' seconds');
+                return new Promise(function (resolve, reject) {
+                    setTimeout(function () {
+                        resolve("response");
+                    }, duration*1000);
+                });
+            }
+
+            /*
+            * Difference bw async().then(f1,f2) and async().then(f1).catch(f2):
+            * async().then(f1,f2):
+            * only one of f1 and f2 will be called depending on whether async() is resolved or rejected
+            * async().then(f1).catch(f2):
+            * equiv. to async().then(f1,undefined).then(undefined, f2)
+            * so there is a possibility that both may be called
+            * if there is an error anywhere before .then(undefined, f2), it will be caught by f2
+            * */
+            wait(1).then(function () {
+                console.log('s1');
+                return wait(1);
+            }).then(function () {
+                console.log('s2');
+                return wait(1);
+            }, function (err) {
+                console.error(err);
+                console.error('e1');
+            }).then(function () {
+                console.log('s3');
+                return wait(1);
+            }).catch(function (err) {
+                console.error(err);
+                console.error('e2');
+            }).then(function () {
+                console.log('s4');
+                return wait(1);
+            }).then(function () {
+                console.log('s5');
+                return wait(1);
+            }).catch(function (err) {
+                console.error(err);
+                console.error('e3');
+            });
+
+        })();
+    </script>
+</head>
+
+<body>
+    <div id="output">See Console Please</div>
+</body>
+</html>
