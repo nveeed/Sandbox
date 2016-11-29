@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>JavaScript On Close</title>
+    <link rel="stylesheet" href="../_libraries/bootstrap.css"/>
+    <script type="text/javascript" src='../_libraries/bootstrap+jquery.js'></script>
+    <script type="text/javascript" src='common.js'></script>
+    <script type="text/javascript">
+        (function () {
+
+
+
+        })();
+    </script>
+</head>
+
+<body onbeforeunload="return confirm('onbeforeunload')" onunload="return confirm('onunload')">
+    <div id="output"></div>
+</body>
+</html>

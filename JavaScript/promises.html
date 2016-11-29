@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>JavaScript SandBox</title>
+    <link rel="stylesheet" href="../_libraries/bootstrap.css"/>
+    <script type="text/javascript" src='../_libraries/bootstrap+jquery.js'></script>
+    <script type="text/javascript" src='common.js'></script>
+    <script type="text/javascript">
+        (function () {
+
+            function wait(duration) {
+                console.log('waiting '+duration+' seconds');
+                return new Promise(function (resolve) {
+                    setTimeout(function () {
+                        resolve("response");
+                    }, duration*1000);
+                });
+            }
+
+            var successHandler = function (res) {
+                console.log('It worked. Here is the response:');
+                console.log(res);
+            };
+
+            var errorHandler = function (err) {
+                console.log('error occurred:');
+                console.log(err);
+            };
+
+            wait(2).then(successHandler).catch(errorHandler);
+
+            console.log("I'm called after wait but it does not mean that I'll be called after success or error.");
+
+        })();
+    </script>
+</head>
+
+<body>
+    <div id="output">See Console Please</div>
+</body>
+</html>
