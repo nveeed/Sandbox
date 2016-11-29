@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>jQuery SandBox</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+            validateNumbers();
+            $('#mobile_numbers').keyup(function () {
+                if (/\D/g.test(this.value)) {
+                    this.value = this.value.replace(/\D/g, '');
+                }
+                this.value = this.value
+                        .replace(/[\n\r]+/g, "")
+                        .replace(/(.{10})/g, "$1\n");
+                validateNumbers();
+            });
+            function validateNumbers() {
+                var value = $("#mobile_numbers").val();
+                var numbersArray = value.split('\n');
+                var validNumbers = [];
+                var duplicateNumbers = [];
+                var inValidNumbers = [];
+                for( var $i = 0; $i < numbersArray.length; $i ++ ){
+                    var number = numbersArray[$i];
+                    if( validNumbers.indexOf(number) !== -1 || inValidNumbers.indexOf(number) !== -1 )
+                    {
+                        duplicateNumbers.push(number);
+                    }else if (number.match(/[789]\d{9}/)){
+                        validNumbers.push(number);
+                    }else{
+                        inValidNumbers.push(number);
+                    }
+                }
+                $("#total").text(numbersArray.length);
+                $("#duplicate").text(duplicateNumbers.length);
+                $("#valid").text(validNumbers.length);
+                $("#invalid").text(inValidNumbers.length);
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+<p><textarea name="mobile_numbers" id="mobile_numbers" cols="30" rows="15">7777777777
+8888888888
+9999999999
+7777777776
+6601145591
+5566887744
+664433
+8888888886
+9999999996
+9999999996
+8888888886</textarea></p>
+<p>Total Numbers: <span id="total"></span></p>
+<p>Duplicate Numbers: <span id="duplicate"></span></p>
+<p>Valid Numbers: <span id="valid"></span></p>
+<p>Invalid Numbers: <span id="invalid"></span></p>
+
+</body>
+</html>
