@@ -1,39 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
-    <title>Angular Basics</title>
+    <title ng-controller="LayoutController">Angular {{title}}</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script>
         (function () {
-            angular.module('myApp',[])
-                .controller('MainController', MainController);
+            angular.module('myModule', []).filter('uc', function () {
+                return function (input) {
+                    return input.toUpperCase();
+                }
+            });
+
+            angular.module('myApp', ['myModule']).controller('LayoutController', LayoutController);
+
+            function LayoutController($scope){
+                $scope.title = "Basics";
+                $scope.data = "Layout data";
+            }
+
+        })();
+
+        (function () {
+            angular.module('myApp').requires.push('myModule');
+            angular.module('myApp').controller('MainController', MainController);
 
             function MainController($http,$scope){
-                $scope.data = [];
+                $scope.data = "MainController data";
                 $scope.error = [];
-                $scope.someVar = true;
 
-                $http.get('/Sandbox/AngularJS/server-side-handler.php').then(
-                    function (response) {
-                        $scope.data = response.data;
-                    },
-                    function (response) {
-                        $scope.error = response.data;
-                    }
-                );
+//                $http.get('/Sandbox/AngularJS/server-side-handler.php').then(
+//                    function (response) {
+//                        $scope.data = response.data;
+//                    },
+//                    function (response) {
+//                        $scope.error = response.data;
+//                    }
+//                );
             }
+
         })();
     </script>
 </head>
-<body ng-app="myApp" ng-controller="MainController">
+<body>
 
-<div ng-class="{'green': someVar==true}">some thing</div>
+<aside ng-controller="LayoutController">
+    <pre>{{data | uc}}</pre>
+</aside>
 
-<h3>Data:</h3>
-<pre>{{data | json}}</pre>
+<div ng-controller="MainController">
+    <h3>Data:</h3>
+    <pre>{{data | uc}}</pre>
 
-<h3>Errors:</h3>
-<pre>{{error | json}}</pre>
+    <h3>Errors:</h3>
+    <pre>{{error | json}}</pre>
+</div>
 
 </body>
 </html>
