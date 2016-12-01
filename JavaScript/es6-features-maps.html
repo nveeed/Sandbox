@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>ES6 SandBox</title>
+    <link rel="stylesheet" href="../_libraries/bootstrap.css"/>
+    <script type="text/javascript" src='../_libraries/bootstrap+jquery.js'></script>
+    <script type="text/javascript" src='common.js'></script>
+    <script type="text/javascript">
+        (function () {
+
+            let map = new Map();
+            map.set('p1', 'value1');
+            // keys are arbitrary:
+            map.set({}, 'value2');
+
+            console.log(map);
+            console.log(map.get('p1'));
+
+            // keys are compared similar to === so following will log undefined
+            console.log(map.get({}));
+
+            console.log(map.keys());
+            console.log([...map.keys()]);
+            
+
+        })();
+    </script>
+</head>
+
+<body>
+    <div id="output">See Console Please</div>
+</body>
+</html>

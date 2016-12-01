@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>ES6 SandBox</title>
+    <link rel="stylesheet" href="../_libraries/bootstrap.css"/>
+    <script type="text/javascript" src='../_libraries/bootstrap+jquery.js'></script>
+    <script type="text/javascript" src='common.js'></script>
+    <script type="text/javascript">
+        (function () {
+
+            // default parameters----------------------------------
+            function func(a = 2, b = 3) {
+                console.log(a,b);
+            }
+            func();
+
+            // template literals---------------------------------------
+            var x = 28;
+            console.log(`My age is ${x}`);
+
+            // arrow functions -------------------------------------
+            let array = [1,2,3];
+            // tradition ES5
+            let squares = array.map(function(x){
+                return x*x;
+            });
+            console.log(squares);
+
+            // ES6 arrow function
+            squares = array.map( (x) => {
+                return x * x;
+            });
+            console.log(squares);
+
+            // single arguments don't require '()'
+            squares = array.map( x => {
+                return x * x;
+            });
+            console.log(squares);
+
+            // single return statements don't require '{}' or 'return'
+            squares = array.map( x => x * x);
+            console.log(squares);
+
+            // Object.assign ---------------------------------
+            let defObj = {
+                method: 'get',
+                url: '/',
+                data: {}
+            };
+            console.log(defObj);
+
+            Object.assign(defObj, {url: '/my-url'});
+            console.log(defObj);
+
+            Object.assign(defObj, {params: 'params'});
+            console.log(defObj);
+
+        })();
+    </script>
+</head>
+
+<body>
+    <div id="output">See Console Please</div>
+</body>
+</html>
